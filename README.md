@@ -6,7 +6,7 @@ flowchart TD
     ESP[ESP32 beacons x3<br/>Broadcast BLE signal] --> RSSI[RSSI logger<br/>Scan, window, smooth, log]
     PPG_S[MAX30102 sensor<br/>Heartbeat / PPG waveform] --> PPG_P[PPG pipeline<br/>Clean, segment beats, features]
 
-    PPG_P --> AUTH{Biometric authenticator<br/>One-Class SVM — is this Pedro?}
+    PPG_P --> AUTH{Biometric authenticator<br/>One-Class SVM — is this Me?}
     AUTH -->|if authenticated| LOC[Location classifier<br/>k-NN / Random Forest]
     AUTH -->|if authenticated| HR[HR state classifier<br/>Resting / active / stressed]
     RSSI -.-> LOC
